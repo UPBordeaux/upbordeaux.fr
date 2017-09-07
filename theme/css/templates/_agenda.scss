@@ -1,0 +1,15 @@
+
+// Dans l'agenda
+.composition_agenda{
+	// On passe les listes en colonnes
+	.liste.evenements{
+		@extend .liste.colonnes;
+	}
+	
+	// Le bouton d'archives
+	a.archives{
+		@extend .button;
+		display:block;
+		text-align:center;
+	}
+}

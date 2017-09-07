@@ -1,0 +1,68 @@
+
+/**
+ * Variables et fonctions de base
+ * 
+ * Ces imports ne génèrent aucun style CSS, ce sont des utilitaires ou sinon des styles de librairies
+ */
+@import "variables";
+@import "bourbon";
+@import "grid-settings"; // config de Neat, après Bourbon car utilise em()
+@import "neat";
+@import "omega-reset"; // complément à Neat pour le responsive
+@import "layoutgala"; // mixins LayoutGala, si on en a besoin
+@import "sassy-buttons"; // mixins de boutons
+@import "hashgrid"; // mixin de visualisation de la grille pour aider
+
+/**
+ * Base CSS
+ * 
+ * Styles de premier niveau pour les éléments de base, la plupart sans classes
+ */
+@import "tinytypo"; // Typographie de base, pour n'importe quel site
+@import "typo"; // Choix graphiques de base propres à ce site (couleurs de base, tailles, polices, etc)
+
+/**
+ * Gestion des gabarits
+ * 
+ * Placement des blocs principaux, colonnes, etc
+ */
+@import "layouts";
+
+/**
+ * Modules
+ * 
+ * Ce sont des modèles cohérents, réutilisables quelque soit l'endroit où on les place
+ */
+@import "modules/text-fadeout"; // Masquer un bas de texte avec un dégradé
+@import "modules/buttons"; // Tous les boutons et leurs variantes
+@import "modules/forms"; // Les formulaires
+@import "modules/lists"; // Les différentes listes du site
+@import "modules/icons"; // La classe insérant les icônes
+@import "modules/icons-codes"; // Les codes de chaque icone
+// @import "modules/illustrations"; // Les images et légendes
+// @import "modules/comments" // Les commentaires
+// ...
+
+/**
+ * Sections
+ * 
+ * Styles spécifiques à des morceaux de pages, mais dans tout le site
+ */
+@import "sections/access"; // Accès rapide
+@import "sections/header"; // Entête du site
+@import "sections/firstnav"; // Navigation principale
+@import "sections/breadcrumb"; // Chemin hiérarchique
+@import "sections/content"; // Contenu principal
+@import "sections/aside"; // Navigations secondaires
+@import "sections/footer"; // Pied de page
+// ...
+
+/**
+ * Templates
+ * 
+ * Styles spécifiques à des pages ou groupes de pages
+ */
+@import "templates/sommaire"; // Styles propres à la page d'accueil
+@import "templates/agenda"; // Pour l'agenda
+// ...
+

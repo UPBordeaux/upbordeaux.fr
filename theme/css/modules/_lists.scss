@@ -1,0 +1,85 @@
+
+@mixin list-none() {
+	list-style:none;
+	margin-left:0;
+	
+	li:before{
+		content:'';
+	}
+}
+
+// On style les listes utilisées dans les trucs Z
+.liste{
+	margin-bottom:$typo-margin-vertical;
+	
+	.liste-items{
+		@extend .list-none;
+	}
+	.item{
+		margin-bottom:$typo-margin-vertical;
+	}
+	article{
+		@extend .link-block-wrapper;
+	}
+	.spip_logos{
+		max-width:100%;
+	}
+	.titre{
+		@extend .h3;
+		display:block;
+	}
+	a.tout{
+		@extend .button;
+		clear:both;
+	}
+}
+
+.liste.documents{
+	.spip_logos{
+		float:left;
+	}
+}
+
+// Des listes qui peuvent s'afficher en colonne
+.liste.colonnes{
+	// En grand écran, les listes passent en 3 colonnes
+	@include media($bp-medium-plus-up){
+		.liste-items{
+			@include row();
+		}
+		.item{
+			@include span-columns(3 of 9);
+			@include omega(3n);
+		}
+	}
+}
+
+// Présentation par défaut des listes d'événements
+.liste.evenements{
+	.spip_logos{
+		display:block;
+		margin-bottom:$typo-margin-vertical/2;
+	}
+	.titre{
+		margin-bottom:($typo-margin-vertical/1.25)/2;
+	}
+	p{
+		margin:0;
+	}
+	.postmeta{
+		font-size:0.9em;
+		line-height:$typo-line-height/0.9;
+	}
+	.publication{
+		@extend .icon;
+		@extend .icon-clock;
+	}
+	.lieu{
+		@extend .icon;
+		@extend .icon-location;
+	}
+	.rubrique{
+		color:lighten($couleur-texte,50%);
+		text-transform:uppercase;
+	}
+}

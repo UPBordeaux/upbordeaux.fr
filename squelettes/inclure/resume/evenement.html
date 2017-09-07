@@ -1,0 +1,25 @@
+<BOUCLE_vevent(EVENEMENTS){id_evenement=#ENV{id,#ENV{id_evenement}}}{tout}>
+[(#SET{annee,#DATE_DEBUT|annee})][(#SET{mois,#DATE_DEBUT|nom_mois})][(#SET{jour,#DATE_DEBUT|jour})]
+<article class="evenement id_#ID_EVENEMENT" itemscope itemtype="http://schema.org/Event">
+	[(#LOGO_EVENEMENT|sinon{#LOGO_ARTICLE}|sinon{#CHEMIN{images/cube-bleu.jpg}}
+		|image_reduire{#ENV{largeur_logo,640},0}
+		|image_recadre{#ENV{logo_proportion,4:3},''}
+		|responsive_logo)]
+	<strong class="titre #EDIT{titre}">
+		<a itemprop="url" class="url" href="[(#URL_EVENEMENT)]">
+			<span itemprop="name">#TITRE</span>
+		</a>
+	</strong>
+	<meta itemprop="startDate" content="[(#DATE_DEBUT|date_iso)]" />
+	<meta itemprop="endDate" content="[(#DATE_FIN|date_iso)]" />
+	<div class="contenu">
+		#SET{intro,''}<BOUCLE_art(ARTICLES){si #ENV{sinon_intro_article,oui}|=={non}|ou{#ENV{intro}|=={non}}|non}{id_article}>#SET{intro,#INTRODUCTION{#ENV{coupe,300}}</BOUCLE_art>
+		[(#ENV{intro,oui}|=={non}|non)[<div class="introduction #EDIT{descriptif}" itemprop="description">(#DESCRIPTIF|sinon{#GET{intro}})</div>]]
+	</div>
+	<div class="postmeta">
+		<p class="publication">[<time>(#DATE_DEBUT|agenda_affdate_debut_fin{#DATE_FIN,#HORAIRE*,'hcal'})</time>]</p>
+		[<p class="lieu">(#LIEU)</p>]
+		<p class="rubrique">[(#INFO_TITRE{rubrique,#ID_RUBRIQUE})]</p>
+	</div>
+</article>
+</BOUCLE_vevent>

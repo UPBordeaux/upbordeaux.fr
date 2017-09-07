@@ -1,0 +1,36 @@
+
+/* Chemin de navigation hiérarchique */
+.breadcrumb{
+	.breadcrumb-items{
+		@extend .list-none;
+		margin:0;
+	}
+	.item{
+		@include inline-block;
+	}
+	.item:first-child{
+		a{
+			background:url('../images/icon-home.png') -2em center no-repeat;
+			display:inline-block;
+			padding:0;
+			text-indent:-10000px;
+			width:1.25em;
+			
+			&:hover{
+				background-position:0em center;
+			}
+			&:focus{
+				background:black url('../images/icon-home.png') -2em center no-repeat !important;
+			}
+		}
+	}
+	
+	@include media($bp-medium-plus-up){
+		.container{
+			background-color:#eee;
+			border:1px solid #ccc;
+			border-width:0 1px;
+			padding:0.25em 1em;
+		}
+	}
+}

@@ -1,0 +1,27 @@
+<BOUCLE_content(RUBRIQUES){id_rubrique}>
+<section>
+	<header class="cartouche">
+		<h1[ class="(#EDIT{titre})"]>#TITRE</h1>
+	</header>
+	
+	<div class="main">
+		[<div class="#EDIT{texte} chapo">(#TEXTE)</div>]
+		
+		<BOUCLE_prochain(EVENEMENTS){branche}{!evenement_passe}{0,1}{par date_debut}>#SET{id,#ID_EVENEMENT}</BOUCLE_prochain>
+		<div class="liste resultats evenements">
+		<INCLURE{fond=liste/evenements,
+			env,ajax,
+			relatif=en_cours_a_veni,
+			debut_resultats=@#GET{id},
+			pagination=9,
+			intro=non}
+		/>
+		</div>
+	</div>
+	
+	<footer>
+		[<p class="info-publi"><span class="published"><:dernier_ajout:> : (#DATE|affdate_jourcourt)</span></p>]
+		[<div class="notes"><h2><:info_notes:></h2>(#NOTES)</div>]
+	</footer>
+</section>
+</BOUCLE_content>

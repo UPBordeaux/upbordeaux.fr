@@ -1,0 +1,15 @@
+
+/* Entourage du contenu principal */
+.central .container{
+	background-color:white;
+	
+	@include media($bp-medium-plus-up){
+		border:1px solid #ccc;
+		border-width:0 1px 0 1px;
+		padding-top:$typo-margin-vertical;
+	}
+}
+
+/* Contenu principal */
+.content{
+}

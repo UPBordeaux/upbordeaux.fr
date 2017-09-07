@@ -1,0 +1,38 @@
+<BOUCLE_content(RUBRIQUES){composition=agenda}{0,1}>
+<section>
+	<header class="cartouche">
+		<h1>Archives de tous nos événements</h1>
+		[<p class="info-publi"><span class="published"><:dernier_ajout:> : (#DATE|affdate_jourcourt)</span></p>]
+	</header>
+	
+	<div class="main">
+		#SET{hn,1}
+		<BOUCLE_sousrub(RUBRIQUES){id_parent}{par num titre,titre}>
+		#SET{hn,#GET{hn}|plus{1}}
+		<h#GET{hn}>#TITRE</h#GET{hn}>
+			<BOUCLE_articles(ARTICLES){id_rubrique}{par num titre, titre}>
+			#SET{hn,#GET{hn}|plus{1}}
+			<h#GET{hn}>#TITRE</h#GET{hn}>
+				<B_evenements>
+				<ul class="liste-items evenements">
+					<BOUCLE_evenements(EVENEMENTS){id_article}{par date_debut}>
+					<li class="item">
+						<a href="#URL_EVENEMENT">#TITRE</a>
+						[<span class="date">(#DATE_DEBUT|agenda_affdate_debut_fin{#DATE_FIN,#HORAIRE,'hcal'}|strtolower)</span>]
+					</li>
+					</BOUCLE_evenements>
+				</ul>
+				</B_evenements>
+			#SET{hn,#GET{hn}|moins{1}}
+			</BOUCLE_articles>
+			
+			<BOUCLE_soussousrub(BOUCLE_sousrub)/>
+		#SET{hn,#GET{hn}|moins{1}}
+		</BOUCLE_sousrub>
+	</div>
+	
+	<footer>
+		[<div class="notes"><h2><:info_notes:></h2>(#NOTES)</div>]
+	</footer>
+</section>
+</BOUCLE_content>

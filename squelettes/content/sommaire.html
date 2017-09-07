@@ -1,0 +1,85 @@
+<section>
+	<header class="cartouche none">
+		<h1>#NOM_SITE_SPIP</h1>
+	</header>
+
+	<div class="main">
+		<BOUCLE_une(SELECTIONS){identifiant=focus}>
+		<B_une_contenus>
+		<div class="focus selection">
+			<h2>#TITRE</h2>
+			<BOUCLE_une_contenus(SELECTIONS_CONTENUS){id_selection}{par num titre, titre}{0,1}>
+			<article class="item">
+				<a href="#URL">
+					[(#LOGO_SELECTIONS_CONTENU
+						|image_reduire{1200,0}
+						|image_recadre{5:1,''}
+						|image_aplatir{jpg,ffffff}
+						|adaptive_images{1200})]
+					<div class="texte">
+						<h3 class="titre">
+							<span[ class="(#EDIT{titre})"]>#TITRE</span>
+						</h3>
+						[<p class="[(#EDIT{descriptif}) ]descriptif">(#DESCRIPTIF|couper{200,'…'})</p>]
+					</div>
+				</a>
+			</article>
+			</BOUCLE_une_contenus>
+		</div>
+		</B_une_contenus>
+		</BOUCLE_une>
+		
+		<div class="recent">
+			<div class="liste evenements">
+				<h2>Prochainement à l’UPB</h2>
+				<B_prochains_evenements>
+				<ul class="liste-items">
+					<BOUCLE_prochains_evenements(EVENEMENTS){par date_debut}{0,5}>
+					<li class="item">
+						#INCLURE{fond=inclure/resume/evenement,id_evenement,intro=non,logo_proportion=4:3}
+					</li>
+					</BOUCLE_prochains_evenements>
+				</ul>
+				</B_prochains_evenements>
+				<BOUCLE_rubrique_agenda(RUBRIQUES){composition=agenda}{0,1}>
+				#SET{id_agenda,#ID_RUBRIQUE}
+				<a class="tout" href="#URL_RUBRIQUE">Tout l’agenda</a>
+				</BOUCLE_rubrique_agenda>
+			</div>
+			
+			<div class="liste articles">
+				<h2>Dernières publications</h2>
+				<B_derniers_articles>
+				<ul class="liste-items">
+					<BOUCLE_derniers_articles(ARTICLES){id_secteur!=#GET{id_agenda}}{!par date}{0,3}>
+					<li class="item">
+						#INCLURE{fond=inclure/resume/article,id_article,logo_proportion=16:9}
+					</li>
+					</BOUCLE_derniers_articles>
+				</ul>
+				</B_derniers_articles>
+			</div>
+		</div>
+		
+		<div class="les_autres">
+			<BOUCLE_autres(SELECTIONS){identifiant IN #LISTE{clients,partenaires,financeurs}}>
+			<B_autres_contenus>
+			<div class="liste #IDENTIFIANT">
+				<h2>#TITRE</h2>
+				<ul class="liste-items">
+					<BOUCLE_autres_contenus(SELECTIONS_CONTENUS){id_selection}{par num titre,titre}>
+					<li class="item">
+						<a href="#URL" title="[(#TITRE|attribut_html)]">
+							[(#LOGO_SELECTIONS_CONTENU
+								|image_reduire{0,48}
+								|inserer_attribut{alt,#TITRE|attribut_html})]
+						</a>
+					</li>
+					</BOUCLE_autres_contenus>
+				</ul>
+			</div>
+			</B_autres_contenus>
+			</BOUCLE_autres>
+		</div>
+	</div>
+</section>

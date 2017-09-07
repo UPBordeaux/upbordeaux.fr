@@ -1,0 +1,18 @@
+
+/* Pied de page */
+.footer{
+	color:#888;
+	margin-bottom:$typo-margin-vertical;
+	text-align:center;
+	
+	a{
+		color:#888;
+	}
+	
+	@include media($bp-medium-plus-up){
+		.container{
+			border:1px solid #ccc;
+			padding:1em;
+		}
+	}
+}

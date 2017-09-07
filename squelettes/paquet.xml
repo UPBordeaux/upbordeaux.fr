@@ -1,0 +1,22 @@
+<paquet
+	prefix="upb_squelettes"
+	categorie="squelette"
+	version="1.0.0"
+	etat="dev"
+	compatibilite="[3.0.0;3.0.*]"
+	logo="upb_squelettes.jpg"
+>
+	<nom>UPB : squelettes du site</nom>
+
+	<auteur>Vincent</auteur>
+	<copyright>2015</copyright>
+	<licence>GPL v3</licence>
+	
+	<!--necessite nom="upb_core" compatibilite="[1.0.0;]" /-->
+	<necessite nom="zcore" compatibilite="[2.4.0;]" />
+	<necessite nom="adaptive_images" compatibilite="[1.9.0;]" />
+	<necessite nom="menus" compatibilite="[1.4.6;]" />
+	<necessite nom="pages" compatibilite="[1.0.5;]" />
+	<necessite nom="compositions" compatibilite="[3.3.6;]" />
+	<necessite nom="polyhier" compatibilite="[3.0.3;]" />
+</paquet>

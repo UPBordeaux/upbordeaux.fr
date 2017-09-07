@@ -1,0 +1,17 @@
+<paquet
+	prefix="upb_core"
+	categorie="divers"
+	version="1.0.0"
+	schema="1.0.0"
+	etat="dev"
+	compatibilite="[3.0.0;3.0.*]"
+	logo="upb_core.jpg"
+>
+	<nom>UPB : noyau fonctionnel</nom>
+
+	<auteur>Vincent</auteur>
+	<copyright>2015</copyright>
+	<licence>GPL v3</licence>
+	
+	<necessite nom="cextras" compatibilite="[3.2.7;]" />
+</paquet>

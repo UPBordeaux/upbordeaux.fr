@@ -1,0 +1,80 @@
+
+// Sur l'accueil du site
+.page_sommaire{
+	.focus{
+		position:relative;
+		margin-bottom:$typo-margin-vertical;
+		
+		h2{
+			display:none;
+		}
+		p{
+			margin:0;
+		}
+		.titre, .texte{
+			background:$couleur-rouge;
+			color:white;
+			margin:0;
+		}
+		.texte{
+			padding:$typo-margin-vertical/2;
+		}
+	}
+	.liste{
+		clear:both;
+	}
+	.evenements{
+		article{
+			@extend .clearfix;
+			clear:both;
+			margin-bottom:$typo-margin-vertical;
+		}
+	}
+	.articles{
+		.publication{
+			display:none;
+		}
+		p{
+			margin:0;
+		}
+	}
+	
+	.les_autres{
+		.item{
+			display:inline-block;
+		}
+	}
+	
+	@include media($bp-medium-up){
+		.evenements{
+			.spip_logos{
+				float:left;
+				margin-right:1em;
+				width:40% !important;
+			}
+		}
+	}
+	@include media($bp-medium-plus-up){
+		.focus{
+			.titre{
+				left:0;
+				padding:0.5em;
+				position:absolute;
+				top:0;
+			}
+		}
+		
+		// En assez grand, on passe les trucs récents en deux colonnes
+		.recent{
+			@include row();
+			
+			.evenements{
+				@include span-columns(8 of 12);
+			}
+			.articles{
+				clear:none;
+				@include span-columns(4 of 12);
+			}
+		}
+	}
+}

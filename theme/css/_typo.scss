@@ -1,0 +1,48 @@
+
+body{
+	color:$couleur-texte;
+    font-family: Arial,Helvetica,"Liberation Sans",FreeSans,sans-serif;
+}
+
+@include media($bp-medium-plus-up){
+	.page{
+		background:#fff url('../images/cube-bleu.jpg') 20px 200px no-repeat;
+	}
+}
+
+/* Liens par défaut */
+a{
+	color:$couleur-lien;
+	text-decoration:none;
+	
+	&:hover{
+		text-decoration:underline;
+	}
+	&:focus{
+		outline:0;
+	}
+	&:visited{
+		color:$couleur-lien;
+	}
+}
+.link-block-wrapper{
+	position:relative;
+	
+	a{
+		// position:inherit;
+		
+		&:before{
+			content:"";
+			position:absolute;
+			bottom:0;
+			left:0;
+			right:0;
+			top:0;
+		}
+	}
+}
+
+time abbr[title]{
+	border-bottom:0;
+	text-decoration:none;
+}
