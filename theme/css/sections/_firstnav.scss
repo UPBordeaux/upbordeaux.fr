@@ -29,28 +29,20 @@
 		}
 		.menu-items{
 			line-height:0;
-			text-align:justify;
-			
-			&:after{
-				content:'';
-				display:inline-block;
-				vertical-align:top;
-				width:99%;
-			}
+			display: -webkit-box;
+			display: -ms-flexbox;
+			display: flex;
+			-webkit-box-flex: row;
+			    -ms-flex: row nowrap auto;
+			        flex: row nowrap auto;
+			-ms-flex-pack: distribute;
+			    justify-content: space-around;
 		}
 		.item{
-			display:inline-block;
 			line-height:$typo-line-height;
 			margin:0;
 			padding:0;
 			vertical-align:top;
-			
-			&:first-child{
-				text-align:left;
-			}
-			&:last-child{
-				text-align:right;
-			}
 		}
 	}
 }
