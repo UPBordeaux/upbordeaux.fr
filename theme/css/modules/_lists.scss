@@ -32,6 +32,19 @@
 		@extend .button;
 		clear:both;
 	}
+	// Listes d'articles
+	&.articles {
+		.item {
+			margin-bottom: $typo-margin-vertical*3;
+		}
+		.entry-title {
+			margin-top: $typo-margin-vertical / 2;
+			margin-bottom: $typo-margin-vertical / 2;
+		}
+		.publication {
+			margin-bottom: $typo-margin-vertical / 2;
+		}
+	}
 }
 
 .liste.documents{
