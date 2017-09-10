@@ -1,0 +1,15 @@
+.menu {
+	.menu-items {
+		@extend .list-none;
+		.item {
+			margin-bottom: $typo-margin-vertical/2;
+			a {
+				
+			}
+		}
+	}
+	// menu secteurs
+	&.secteur {
+		
+	}
+}
