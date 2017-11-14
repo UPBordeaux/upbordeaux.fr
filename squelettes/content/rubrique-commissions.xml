@@ -1,0 +1,6 @@
+<composition>
+	<nom>Secteur commissions</nom>
+	<description>Secteur qui contient les commissions.</description>
+	<icon>images/rubrique.png</icon>
+	<branche type="rubrique" composition="commission" />
+</composition>
