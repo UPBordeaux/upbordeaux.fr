@@ -4,10 +4,14 @@
 
 .page_rubrique {
 
-	// Liste des évènements
-	// On reprend l'affichage de l'agenda en colonnes
-	.liste.evenements{
-		@extend .liste.colonnes;
+	// Liste des rubriques
+	.liste.rubriques {
+		@extend .colonnes-2;
+	}
+
+	// Liste des évènements en colonnes
+	.liste.evenements {
+		@extend .colonnes-3;
 	}
 
 }

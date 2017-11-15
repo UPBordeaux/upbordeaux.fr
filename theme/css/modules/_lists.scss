@@ -1,4 +1,8 @@
+/**
+ * Listes
+**/
 
+// Mixin pour une liste sans style
 @mixin list-none() {
 	list-style:none;
 	margin-left:0;
@@ -8,7 +12,7 @@
 	}
 }
 
-// On style les listes utilisées dans les trucs Z
+// Les choses communes à toutes les listes
 .liste{
 	margin-bottom:$typo-margin-vertical;
 	
@@ -48,27 +52,52 @@
 	}
 }
 
+
+/**
+ * ====================
+ * Variantes génériques
+ * ====================
+**/
+
+// Juste une vignette et un titre par dessus
+.liste.hero {
+	
+}
+
+// Vignette sur le côté à gauche
+.liste.media-left {
+	.spip_logos{
+		float:left;
+	}
+}
+
+// Vignette sur le côté à gauche
+.liste.media-top {
+	.spip_logos{
+		display: block;
+	}
+}
+
+
+/**
+ * =====================
+ * Variantes spécifiques
+ * =====================
+**/
+
+// Rubriques
+.liste.rubriques{
+	
+}
+
+// Documents
 .liste.documents{
 	.spip_logos{
 		float:left;
 	}
 }
 
-// Des listes qui peuvent s'afficher en colonne
-.liste.colonnes{
-	// En grand écran, les listes passent en 3 colonnes
-	@include media($bp-medium-plus-up){
-		.liste-items{
-			@include row();
-		}
-		.item{
-			@include span-columns(3 of 9);
-			@include omega(3n);
-		}
-	}
-}
-
-// Présentation par défaut des listes d'événements
+// Événements
 .liste.evenements{
 	.spip_logos{
 		display:block;

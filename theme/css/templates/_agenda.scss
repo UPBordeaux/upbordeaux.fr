@@ -1,9 +1,10 @@
 
 // Dans l'agenda
 .composition_agenda{
+
 	// On passe les listes en colonnes
 	.liste.evenements{
-		@extend .liste.colonnes;
+		@extend .colonnes-3;
 	}
 	
 	// Le bouton d'archives
