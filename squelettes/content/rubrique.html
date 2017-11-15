@@ -9,39 +9,23 @@
 	<div class="main">
 		[<div class="#EDIT{texte} chapo">(#TEXTE|adaptive_images)</div>]
 
-		<BOUCLE_articles(ARTICLES){id_rubrique}{0,1}>
-			<div class="liste articles">
-			<INCLURE{fond=liste/articles-resume,env,ajax,titre=<:articles_rubrique:>} />
-			</div>
-		</BOUCLE_articles>
+		[(#REM) Sous-rubriques ]
+		<div class="liste rubriques">
+			<INCLURE{fond=liste/rubriques-resume,
+				id_parent=#ID_RUBRIQUE,
+				message_aucun='',
+				env,
+				ajax} />
+		</div>
 
-		[(#REM) Si aucun article, affiche un plan de la rubrique ]
-		<B_sous_rubriques>
-		<div class="menu rubriques">
-			<h2 class="h2"><:sous_rubriques:></h2>
-			<ul class="menu-items menu-liste">
-				<BOUCLE_sous_rubriques(RUBRIQUES) {id_parent} {par num titre, titre}>
-				<li class="item menu-entree">
-					<a href="#URL_RUBRIQUE">[(#TITRE)]</a>
+		[(#REM) Articles ]
+		<div class="liste articles">
+			<INCLURE{fond=liste/articles-resume,
+				message_aucun='',
+				env,
+				ajax} />
+		</div>
 
-					[(#REM) Une boucle recursive pour le mini plan]
-					<B_miniplan>
-					<ul class="menu-items menu-liste">
-						<BOUCLE_miniplan(RUBRIQUES) {id_parent} {par num titre, titre}>
-						<li class="item menu-entree">
-							<a href="#URL_RUBRIQUE">[(#TITRE)]</a>
-							<BOUCLE_m2(BOUCLE_miniplan)></BOUCLE_m2>
-						</li>
-						</BOUCLE_miniplan>
-					</ul>
-					</B_miniplan>
-
-				</li>
-				</BOUCLE_sous_rubriques>
-			</ul>
-			</div>
-		</B_sous_rubriques>
-	<//B_articles>
 	</div>
 
 	<aside>
@@ -51,7 +35,8 @@
 		[(#REM) Évènements liés à la rubrique ET à la rubrique de l'année en cours ]
 		<div class="liste resultats evenements">
 			<INCLURE{fond=liste/evenements,
-				env,ajax,
+				env,
+				ajax,
 				id_rubrique=#EVAL{null},
 				categories=#ID_RUBRIQUE,
 				relatif=en_cours_a_venir,

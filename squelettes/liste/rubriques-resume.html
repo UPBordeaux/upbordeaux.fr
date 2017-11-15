@@ -1,0 +1,31 @@
+#SET{defaut_tri,#ARRAY{
+	num titre,1,
+	date,#ENV{date_sens,-1},
+	id_rubrique,1,
+	points,-1
+}}
+<B_rubriques>
+	#ANCRE_PAGINATION
+
+	[<h2>(#ENV{titre})</h2>]
+
+	<ul class="liste-items">
+
+		<BOUCLE_rubriques(RUBRIQUES)
+			{id_parent?}
+			{branche?}
+			{recherche?}
+			{tri #ENV{par,#ENV{recherche}|?{points,num titre}},#GET{defaut_tri}}
+			{!id_rubrique IN #ENV{rubriques_exclus,#ARRAY}}
+			{pagination #ENV{nb,5}}>
+		<li class="item"><INCLURE{fond=inclure/resume/rubrique, id_rubrique} /></li>
+		</BOUCLE_rubriques>
+
+	</ul>
+
+	[<div class="pagination">(#PAGINATION)</div>]
+</B_rubriques>
+
+#SET{message_aucun, #ENV{message_aucun}|is_null|?{<:info_aucun_rubrique:>, #ENV{message_aucun}}}
+[<p>(#GET{message_aucun})</p>]
+<//B_rubriques>
