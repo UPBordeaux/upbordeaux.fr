@@ -61,7 +61,20 @@
 
 // Juste une vignette et un titre par dessus
 .liste.hero {
-	
+	// on cache tout à part le titre
+	.publication,
+	.introduction {
+		display: none;
+	}
+	.spip_logos {
+		margin: 0;
+	}
+	.entry {}
+	.entry-title {
+		text-transform: uppercase;
+		font-family: $typo-font-heavy;
+		font-weight: 600;
+	}
 }
 
 // Vignette sur le côté à gauche
