@@ -4,4 +4,5 @@
 	On a pas besoin d'un squelette spécial, cette compo sert juste à déclarer les héritages.
 
 ]
-<INCLURE{fond=content/rubrique, env} />
+#SET{chemin, #CHEMIN{content/rubrique.html}|replace{'\.html',''}}
+<INCLURE{fond=#GET{chemin}, env} />
