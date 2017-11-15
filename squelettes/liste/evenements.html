@@ -14,9 +14,9 @@
 	<ul class="liste-items">
 		<BOUCLE_resultats(EVENEMENTS)
 			{evenementrelatif #ENV{relatif,tout}}
-			{branche_indirecte?#ENV{parent_indirect}}
+			{branche_indirecte?#ENV{categories,0}}
 			{id_article?}
-			{branche?}
+			{branche_directe?#ENV{id_rubrique,0}}
 			{recherche?}
 			{tri #ENV{par,#ENV{recherche}|?{points,date_debut}},#GET{defaut_tri}}
 			{pagination #ENV{pagination,5}}
