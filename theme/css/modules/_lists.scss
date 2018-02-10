@@ -120,14 +120,15 @@
 	.introduction {
 		display: none;
 	}
-	.entry-media {
-		margin: 0;
+	.entry {
 	}
-	.entry {}
+	.entry-media {
+		margin-bottom: $bs/2;
+	}
 	.entry-title {
 		text-transform: uppercase;
 		font-family: $typo-font-heavy;
-		font-weight: 600;
+		text-align: center;
 	}
 }
 

@@ -11,6 +11,7 @@ $couleur-lien: $couleur-rouge;
 /* Variables de typographie */
 $typo-line-height: 1.5;
 $typo-margin-vertical: ($typo-line-height)*1em;
+$bs: $typo-margin-vertical; // synonyme plus court
 // familles génériques
 $typo-font-text: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif, sans;
 $typo-font-heading: "Arial Black", "Arial Bold", "Gadget", sans-serif, sans;
