@@ -6,7 +6,7 @@
 ]
 <BOUCLE_resume_rubrique(RUBRIQUES) {id_rubrique} {statut?}>
 
-<rubrique class="entry rubrique hentry">
+<article class="entry rubrique hentry">
 
 	[(#LOGO_RUBRIQUE|sinon{#CHEMIN{images/cube-bleu.jpg}}
 		|image_reduire{#ENV{largeur_logo,640},0}
@@ -23,6 +23,6 @@
 
 	[<div class="#EDIT{intro} introduction entry-content">(#INTRODUCTION{#ENV{coupe,200}})</div>]
 
-</rubrique>
+</article>
 
 </BOUCLE_resume_rubrique>
