@@ -12,8 +12,12 @@
 	}
 }
 
-// Les choses communes à toutes les listes
-.liste{
+/**
+ * =======================================
+ * Les choses communes à toutes les listes
+ * =======================================
+ */
+.liste {
 	margin-bottom:$typo-margin-vertical;
 	
 	.liste-items{
@@ -37,81 +41,41 @@
 		@extend .button;
 		clear:both;
 	}
-	// Listes d'articles
-	&.articles {
-		.item {
-			margin-bottom: $typo-margin-vertical*3;
-		}
-		.entry-title {
-			margin-top: $typo-margin-vertical / 2;
-			margin-bottom: $typo-margin-vertical / 2;
-		}
-		.publication {
-			margin-bottom: $typo-margin-vertical / 2;
-		}
-	}
 }
 
 
 /**
- * ====================
- * Variantes génériques
- * ====================
-**/
+ * =====================
+ * Variantes spécifiques (objets éditoriaux, etc.)
+ * =====================
+ */
 
-// Juste une vignette et un titre par dessus
-.liste.hero {
-	// on cache tout à part le titre
-	.publication,
-	.introduction {
-		display: none;
+// Articles
+.liste.articles {
+	.item {
+		margin-bottom: $typo-margin-vertical*3;
 	}
-	.spip_logos {
-		margin: 0;
-	}
-	.entry {}
 	.entry-title {
-		text-transform: uppercase;
-		font-family: $typo-font-heavy;
-		font-weight: 600;
+		margin-top: $typo-margin-vertical / 2;
+		margin-bottom: $typo-margin-vertical / 2;
+	}
+	.publication {
+		margin-bottom: $typo-margin-vertical / 2;
 	}
 }
-
-// Vignette sur le côté à gauche
-.liste.media-left {
-	.spip_logos{
-		float:left;
-	}
-}
-
-// Vignette sur le côté à gauche
-.liste.media-top {
-	.spip_logos{
-		display: block;
-	}
-}
-
-
-/**
- * =====================
- * Variantes spécifiques
- * =====================
-**/
 
 // Rubriques
-.liste.rubriques{
-	
-}
+.liste.rubriques {}
 
 // Documents
-.liste.documents{
+.liste.documents {
 	.spip_logos{
 		float:left;
 	}
 }
 
 // Événements
-.liste.evenements{
+.liste.evenements {
 	.spip_logos{
 		display:block;
 		margin-bottom:$typo-margin-vertical/2;
@@ -137,5 +101,93 @@
 	.rubrique{
 		color:lighten($couleur-texte,50%);
 		text-transform:uppercase;
+	}
+}
+
+
+/**
+ * ====================
+ * Variantes génériques
+ * ====================
+ */
+
+// Héro = juste une vignette et un titre (par dessus)
+.liste.hero {
+	// on cache tout à part le titre
+	.publication,
+	.introduction {
+		display: none;
+	}
+	.spip_logos {
+		margin: 0;
+	}
+	.entry {}
+	.entry-title {
+		text-transform: uppercase;
+		font-family: $typo-font-heavy;
+		font-weight: 600;
+	}
+}
+
+// Vignette sur le côté à gauche
+.liste.media-left {
+	.spip_logos{
+		float:left;
+	}
+}
+
+// Vignette en haut
+.liste.media-top {
+	.spip_logos{
+		display: block;
+	}
+}
+
+
+/**
+ * ============
+ * Compositions
+ * ============
+ */
+
+// 2 colonnes
+.liste.colonnes-2 {
+	// En grand écran
+	@include media($bp-medium-plus-up){
+		.liste-items{
+			@include row();
+		}
+		.item{
+			@include span-columns(6 of 12);
+			@include omega(2n);
+		}
+	}
+}
+
+// 3 colonnes
+.liste.colonnes-3 {
+	// En grand écran
+	@include media($bp-medium-plus-up){
+		.liste-items{
+			@include row();
+		}
+		.item{
+			@include span-columns(3 of 9);
+			@include omega(3n);
+		}
+	}
+}
+
+// 4 colonnes
+.liste.colonnes-4 {
+	// En grand écran
+	@include media($bp-medium-plus-up){
+		.liste-items{
+			@include row();
+		}
+		.item{
+			@include span-columns(4 of 9);
+			@include omega(4n);
+		}
 	}
 }
