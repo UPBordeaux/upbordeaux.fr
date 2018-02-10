@@ -11,7 +11,7 @@
 
 		[(#REM) Sous-rubriques ]
 		<div class="liste rubriques">
-			<INCLURE{fond=liste/rubriques-resume,
+			<INCLURE{fond=liste/rubriques,
 				id_parent=#ID_RUBRIQUE,
 				message_aucun='',
 				nb=10,
@@ -21,7 +21,7 @@
 
 		[(#REM) Articles ]
 		<div class="liste articles">
-			<INCLURE{fond=liste/articles-resume,
+			<INCLURE{fond=liste/articles,
 				message_aucun='',
 				env,
 				ajax} />
