@@ -15,6 +15,9 @@ function formulaires_rechercher_ressources_saisies_dist($redirect, $options=arra
 				'defaut' => _request('recherche'),
 			),
 		),
+		'options' => array(
+			'texte_submit' => _T('info_rechercher'),
+		),
 	);
 	
 	return $saisies;
