@@ -1,0 +1,8 @@
+<composition>
+	<nom>Rubrique des ressources</nom>
+	<description>Pour la rubrique contenant les archives des choses passées que l'on peut chercher.</description>
+	<icon>images/objet-liste-contenus.png</icon>
+<!--
+	<branche type="article" composition="agenda" />
+-->
+</composition>

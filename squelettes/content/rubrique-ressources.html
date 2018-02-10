@@ -1,0 +1,23 @@
+<BOUCLE_content(RUBRIQUES){id_rubrique}>
+<section>
+	<header class="cartouche">
+		[(#LOGO_RUBRIQUE|image_reduire{200,200})]
+		<h1 class="#EDIT{titre}">#TITRE</h1>
+		[<p class="publication"><time pubdate="pubdate" datetime="[(#DATE|date_iso)]"><:dernier_ajout:> : (#DATE|affdate_jourcourt).</time></p>]
+		
+		<div id="filtrage" class="filtrage">
+			<h2>Filtrer les ressources</h2>
+			#FORMULAIRE_RECHERCHER_RESSOURCES{#SELF}
+		</div>
+	</header>
+
+	<div class="main">
+		[<div class="#EDIT{texte} chapo">(#TEXTE|adaptive_images)</div>]
+
+		[(#REM) Articles ]
+		<div class="liste articles">
+			<INCLURE{fond=liste/articles-resume,env,ajax} />
+		</div>
+	</div>
+</section>
+</BOUCLE_content>
