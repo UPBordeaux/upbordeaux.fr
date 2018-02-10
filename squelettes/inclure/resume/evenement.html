@@ -4,8 +4,7 @@
 	[(#LOGO_EVENEMENT|sinon{#LOGO_ARTICLE}|sinon{#CHEMIN{images/cube-bleu.jpg}}
 		|image_reduire{#ENV{largeur_logo,640},0}
 		|image_recadre{#ENV{logo_proportion,4:3},''}
-		|inserer_attribut{class,'entry-media'}
-		|responsive_logo)]
+		|inserer_attribut{class,'entry-media'})]
 	<strong class="titre #EDIT{titre}">
 		<a itemprop="url" class="url" href="[(#URL_EVENEMENT)]">
 			<span itemprop="name">#TITRE</span>
