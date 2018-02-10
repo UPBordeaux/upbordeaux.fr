@@ -65,7 +65,9 @@
 }
 
 // Rubriques
-.liste.rubriques {}
+.liste.rubriques {
+	@extend .liste.hero;
+}
 
 // Documents
 .liste.documents {
@@ -118,7 +120,7 @@
 	.introduction {
 		display: none;
 	}
-	.spip_logos {
+	.entry-media {
 		margin: 0;
 	}
 	.entry {}
@@ -131,14 +133,14 @@
 
 // Vignette sur le côté à gauche
 .liste.media-left {
-	.spip_logos{
+	.entry-media{
 		float:left;
 	}
 }
 
 // Vignette en haut
 .liste.media-top {
-	.spip_logos{
+	.entry-media{
 		display: block;
 	}
 }
