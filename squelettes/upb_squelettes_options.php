@@ -7,7 +7,7 @@ if (!defined('_ECRIRE_INC_VERSION')) return;
 $GLOBALS['meta']['version_html_max'] = 'html5';
 
 if (!isset($GLOBALS['z_blocs'])){
-	$GLOBALS['z_blocs'] = array('content','aside','extra','head','head_js','header','footer','breadcrumb');
+	$GLOBALS['z_blocs'] = array('content','aside','head','head_js','header','footer','breadcrumb');
 }
 
 define('_ZENGARDEN_FILTRE_THEMES','upb');
