@@ -8,7 +8,15 @@
 	#ANCRE_PAGINATION
 	[<h2>(#ENV{titre})</h2>]
 	<ul class="liste-items">
-		<BOUCLE_articles(ARTICLES){id_article?}{id_rubrique?}{recherche?}{tri #ENV{par,#ENV{recherche}|?{points,num titre}},#GET{defaut_tri}}{!id_article IN #ENV{articles_exclus,#ARRAY}} {pagination #ENV{nb,5}}>
+		<BOUCLE_articles (ARTICLES documents_liens documents)
+			{id_article?}
+			{!id_article IN #ENV{articles_exclus,#ARRAY}}
+			{id_rubrique?}
+			{documents.media?}
+			{recherche?}
+			{tri #ENV{par,#ENV{recherche}|?{points,num titre}},#GET{defaut_tri}}
+			{pagination #ENV{nb,5}}
+		>
 		<li class="item">#INCLURE{fond=inclure/resume/article,id_article}</li>
 		</BOUCLE_articles>
 	</ul>

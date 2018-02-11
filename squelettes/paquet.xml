@@ -20,4 +20,5 @@
 	<necessite nom="compositions" compatibilite="[3.3.6;]" />
 	<necessite nom="polyhier" compatibilite="[3.0.3;]" />
 	<necessite nom="agenda" compatibilite ="[4.0.0;]" />
+	<necessite nom="cvt_rechercher" compatibilite ="[1.1.1;]" />
 </paquet>

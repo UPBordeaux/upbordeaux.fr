@@ -11,8 +11,22 @@ function formulaires_rechercher_ressources_saisies_dist($redirect, $options=arra
 			'saisie' => 'input',
 			'options' => array(
 				'nom' => 'recherche',
-				'label' => _T('info_rechercher'),
+				'label' => 'Recherche libre',
 				'defaut' => _request('recherche'),
+			),
+		),
+		array(
+			'saisie' => 'selection',
+			'options' => array(
+				'nom' => 'media',
+				'label' => 'Média',
+				'data' => array(
+					'audio' => 'Audio',
+					'video' => 'Vidéo',
+					'file' => 'Texte',
+				),
+				'option_intro' => 'Tout',
+				'defaut' => _request('media'),
 			),
 		),
 		'options' => array(
@@ -27,7 +41,7 @@ function formulaires_rechercher_ressources_charger_dist($redirect, $options=arra
 	$contexte = array(
 		'_rechercher_champs' => array(
 			'recherche' => array(),
-			'type' => array(),
+			'media' => array(),
 			'date' => array(),
 		),
 	);
