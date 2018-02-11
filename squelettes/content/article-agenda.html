@@ -35,7 +35,7 @@
 		
 		<BOUCLE_prochain(EVENEMENTS){id_article}{!evenement_passe}{0,1}{par date_debut}>#SET{id,#ID_EVENEMENT}</BOUCLE_prochain>
 		<div class="liste resultats evenements">
-		<INCLURE{fond=liste/evenements,
+		<INCLURE{fond=inclure/liste/evenements,
 			env,ajax,
 			debut_evenements=@#GET{id},
 			pagination=9,

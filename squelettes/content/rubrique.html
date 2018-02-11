@@ -11,7 +11,7 @@
 
 		[(#REM) Sous-rubriques ]
 		<div class="liste rubriques">
-			<INCLURE{fond=liste/rubriques,
+			<INCLURE{fond=inclure/liste/rubriques,
 				id_parent=#ID_RUBRIQUE,
 				message_aucun='',
 				nb=10,
@@ -21,7 +21,7 @@
 
 		[(#REM) Articles ]
 		<div class="liste articles">
-			<INCLURE{fond=liste/articles,
+			<INCLURE{fond=inclure/liste/articles,
 				message_aucun='',
 				env,
 				ajax} />
@@ -35,7 +35,7 @@
 		
 		[(#REM) Évènements liés à la rubrique ET à la rubrique de l'année en cours ]
 		<div class="liste resultats evenements">
-			<INCLURE{fond=liste/evenements,
+			<INCLURE{fond=inclure/liste/evenements,
 				env,
 				ajax,
 				id_rubrique=#EVAL{null},
