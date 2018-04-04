@@ -35,6 +35,11 @@ textarea, input[type=text], input.text, select{
 		.erreur_message{
 		}
 	}
+	.choix {
+		label {
+			display: inline;
+		}
+	}
 	/*.editer{
 		// À partir des moyens grands on met deux champs par ligne
 		@include media($bp-medium-up){
