@@ -1,7 +1,7 @@
 
 body{
 	color:$couleur-texte;
-    font-family: Arial,Helvetica,"Liberation Sans",FreeSans,sans-serif;
+    font-family: $typo-font-text;
 }
 
 @include media($bp-medium-plus-up){
